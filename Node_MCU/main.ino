@@ -98,9 +98,11 @@ void loop() {
   }
   sendUIDToServer(uidString, statusMap[uidString]);
 
-  if (digitalRead(IR_PIN == LOW)&& doorState = true)
+  if (digitalRead(IR_PIN) == LOW && doorState == true) {  
     closeDoor();  // Close the door if motion is detected and the door is open
+  }
 }
+
 
 void sendUIDToServer(String uid, String status) {
   Serial.print(status);
